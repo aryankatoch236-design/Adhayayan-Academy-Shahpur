@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import {getPublicData} from "@/lib/data";
+import {Analytics} from "@/components/analytics";
+import "./globals.css";
+export async function generateMetadata():Promise<Metadata>{const {settings}=await getPublicData();return {title:{default:"Adhyayan Academy | Coaching in Shahpur Kangra",template:"%s | Adhyayan Academy"},description:"Explore coaching in Shahpur Kangra for HPPSC, Patwari, HP-TET, NEET, JEE and CBSE tuition at Adhyayan Academy.",openGraph:{title:"Adhyayan Academy · Shahpur, Kangra",description:"Your Success, Our Mission. Coaching for competitive exams and school students in Shahpur, Kangra.",type:"website",images:[{url:"/opengraph-image",width:1200,height:630,alt:"Adhyayan Academy, Shahpur Kangra"}]},metadataBase:new URL(process.env.NEXT_PUBLIC_SITE_URL||"http://localhost:3000"),icons:{icon:"/icon"},verification:settings.search_console_verification?{google:settings.search_console_verification}:undefined}}
+export default async function RootLayout({children}:{children:React.ReactNode}){const {settings}=await getPublicData();return <html lang="en"><body>{children}<Analytics id={settings.ga_id||process.env.NEXT_PUBLIC_GA_ID||""}/></body></html>}

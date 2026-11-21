@@ -1,0 +1,2 @@
+import Image from "next/image";
+export function Brand({logo,footer=false}:{logo:string;footer?:boolean}){return <a className={`brand${footer?" brand-footer":""}`} href="/" aria-label="Adhyayan Academy home">{logo?<Image src={logo} width={180} height={64} alt="Adhyayan Academy" className="brand-logo"/>:<span className="brand-mark" aria-hidden="true">अ</span>}<span className="brand-copy"><strong>Adhyayan Academy</strong><small>ज्ञान से सफलता तक</small></span></a>}

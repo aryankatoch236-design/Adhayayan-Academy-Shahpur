@@ -1,0 +1,12 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { getPublicData } from "@/lib/data";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { FloatingActions } from "@/components/floating-actions";
+import { EnquiryForm } from "@/components/enquiry-form";
+export const revalidate=60;
+export async function generateStaticParams(){const {courses}=await getPublicData();return courses.map(course=>({slug:course.slug}))}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const {courses}=await getPublicData();const c=courses.find(x=>x.slug===slug);return c?{title:`${c.title} coaching in Shahpur Kangra`,description:c.short_description}:{} }
+export default async function CoursePage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const {settings,courses}=await getPublicData();const course=courses.find(c=>c.slug===slug);if(!course)notFound();return <><Header settings={settings}/><main><section className="course-hero"><div className="container"><a className="back-link" href="/#courses">← All courses</a><p className="eyebrow">{course.category}</p><h1>{course.title}</h1><p className="course-lead">{course.short_description}</p>{course.image_url&&<Image className="course-hero-image" src={course.image_url} alt={course.image_alt||course.title} width={1200} height={650} sizes="(max-width:800px) 100vw, 1180px"/>}<div className="course-facts">{course.duration&&<span><small>Duration</small><strong>{course.duration}</strong></span>}{course.batch_timings&&<span><small>Batch timings</small><strong>{course.batch_timings}</strong></span>}{course.fee&&<span><small>Fee</small><strong>{course.fee}</strong></span>}<a className="button" href="#course-enquiry">Enquire about this course <span>→</span></a></div></div></section><section className="section course-detail"><div className="container course-detail-grid"><div><p className="eyebrow">ABOUT THE COURSE</p><h2>Take your next step<br/><em>with confidence.</em></h2><p>{course.full_description}</p></div><div id="course-enquiry" className="contact-form-card"><h3>Ask us about {course.title}</h3><p>Leave your details and we’ll be in touch.</p><EnquiryForm courses={courses} whatsapp={settings.whatsapp} initialCourse={course.title}/></div></div></section></main><Footer settings={settings}/><FloatingActions settings={settings}/></>}

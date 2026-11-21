@@ -1,0 +1,3 @@
+"use client";
+import {useEffect,useState} from "react";
+export function ThemeToggle(){const [dark,setDark]=useState(false);useEffect(()=>{const saved=localStorage.getItem("academy-theme"),value=saved?saved==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;setDark(value);document.documentElement.dataset.theme=value?"dark":"light"},[]);function toggle(){const next=!dark;setDark(next);document.documentElement.dataset.theme=next?"dark":"light";localStorage.setItem("academy-theme",next?"dark":"light")}return <button className="theme-toggle" type="button" onClick={toggle} aria-label={dark?"Switch to light mode":"Switch to dark mode"} title={dark?"Switch to light mode":"Switch to dark mode"}>{dark?"☀":"◐"}</button>}

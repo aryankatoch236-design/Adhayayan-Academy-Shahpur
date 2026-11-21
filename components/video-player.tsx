@@ -1,0 +1,3 @@
+"use client";
+import {useState} from "react";
+export function VideoPlayer({id,title,index}:{id:string;title:string;index:number}){const [playing,setPlaying]=useState(false);return <article className="video-card"><button className="video-thumb" onClick={()=>setPlaying(true)} aria-label={`Play ${title}`}>{playing?<iframe src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`} title={title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen/>:<><img className="video-poster" src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy"/><span className="play-button">▶</span><span className="video-index">VIDEO 0{index+1}</span></>}</button><h3>{title}</h3></article>}
