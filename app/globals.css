@@ -233,3 +233,139 @@ body{background:#fff;color:var(--ink)}
 .login-card input{padding:14px;border:1.5px solid #d9d2bd;border-radius:10px;font-size:16px;background:#fff;color:#0f172a;outline:none;font-family:inherit}
 .login-card input:focus{border-color:#111b3a;box-shadow:0 0 0 4px rgba(17,27,58,.12)}
 .login-card .button{width:100%}
+
+/* ===== extra polish ===== */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+.site-header{box-shadow:0 2px 18px rgba(10,17,32,.06)}
+.course-icon{background:linear-gradient(145deg,#fdf3d8,#f6e2a9);color:inherit;font-size:24px;width:50px;height:50px;border-radius:14px}
+.course-card{position:relative;overflow:hidden}
+.course-card::after{content:"";position:absolute;right:-34px;top:-34px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(197,139,27,.16),transparent 70%)}
+.course-card:hover{border-color:#c58b1b}
+.section h2{letter-spacing:-.02em}
+.eyebrow::before{content:"";display:inline-block;width:26px;height:2px;background:#c58b1b;vertical-align:middle;margin-right:10px}
+.hero-visual{box-shadow:0 40px 90px rgba(0,0,0,.45),0 0 0 8px rgba(229,182,90,.12)}
+.trust-strip{box-shadow:0 14px 34px rgba(10,17,32,.07);position:relative;z-index:2}
+.value-item{transition:transform .25s ease}.value-item:hover{transform:translateX(6px)}
+.cta-band{background:linear-gradient(120deg,#0a1120,#16234a);padding:64px 0;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(197,139,27,.35),transparent 68%)}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;position:relative}
+.cta-inner h2{color:#fff;font-size:clamp(26px,4vw,38px);max-width:560px;margin:8px 0 10px}
+.cta-inner p{color:#cfd8ea;margin:0}
+.cta-band .eyebrow{color:#e5b65a}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.cta-band .button:not(.button-wa){background:#c58b1b;border-color:#c58b1b;color:#0a1120}
+.login-switch{background:none;border:0;color:#111b3a;font-weight:600;font-size:14px;cursor:pointer;text-decoration:underline;padding:4px;font-family:inherit}
+@media(max-width:700px){.cta-band{padding:48px 0}.cta-actions{width:100%}.cta-actions .button{flex:1}}
+.cta-actions .button{min-height:54px;align-self:center}
+.cta-inner h2{line-height:1.2;font-weight:800}
+
+/* ===== v3: flat, Hindi-belt notice-board identity. Ink navy + brass from the logo ===== */
+:root{--ink:#0e1530;--brass:#b9801d;--chalk:#f1f4f9;--slate:#4d586d;--pine:#1f5a46;--rule:#d5dbe7;--green:#0e1530;--green-dark:#0e1530;--green-deep:#0e1530;--yellow:#b9801d;--cream:#f1f4f9;--paper:#fff;--muted:#4d586d;--line:#d5dbe7}
+body{font-family:Mukta,system-ui,sans-serif;font-size:18px;line-height:1.7;color:#16203a;background:#fff}
+h1,h2,h3,.brand strong,.brand-name{font-family:"Yatra One",Mukta,serif;font-weight:400;letter-spacing:0;line-height:1.15}
+h2{font-size:clamp(30px,4.2vw,46px);color:var(--ink)}
+.section{padding:84px 0}
+/* remove generic tells */
+.section .eyebrow,.hero .eyebrow,.cta-band .eyebrow,.contact-info .eyebrow{display:none}
+.section .course-card .eyebrow,.section .person-card .eyebrow{display:block;letter-spacing:0;text-transform:none;font-size:15px;color:var(--brass);font-weight:600}
+.eyebrow::before{display:none}
+.section h2 em,.cta-inner h2 em,.hero h1 em,.contact-info h2 em{font-style:normal;color:inherit;font-family:inherit}
+.value-num,.trust-items b,.button span[aria-hidden]{display:none}
+.rv{opacity:1;transform:none}
+.course-card::after,.cta-band::before,.hero-pattern{display:none}
+/* buttons: flat, small radius */
+.button{background:var(--ink);border:2px solid var(--ink);color:#fff;border-radius:6px;box-shadow:none;min-height:50px;font-weight:600;font-size:16px;transform:none}
+.button:hover{background:#1d2a55;border-color:#1d2a55;box-shadow:none}
+.button-outline{background:transparent;color:var(--ink)}.button-outline:hover{background:var(--ink);color:#fff}
+.button-wa{background:var(--pine);border-color:var(--pine);color:#fff;box-shadow:none}.button-wa:hover{background:#174536;border-color:#174536}
+/* header */
+.site-header{background:#fff;box-shadow:none;border-bottom:2px solid var(--ink)}
+.brand-logo{height:44px}
+.nav-links a{font-size:16px;font-weight:600}.nav-links a:hover{color:var(--brass)}
+.auth-avatar{background:var(--ink);color:#e5b65a;border-color:var(--brass)}
+/* hero: flat ink, one memorable thing = the course notice board */
+.hero{background:var(--ink);color:#fff;padding:64px 0 120px;position:relative}
+.hero h1{font-size:clamp(40px,6vw,72px);color:#fff;letter-spacing:0;line-height:1.08;max-width:12ch}
+.hero-tagline{color:#e5b65a;font-family:"Yatra One",Mukta,serif;font-size:22px;margin:22px 0 8px}
+.hero-description{color:#c9d2e4;font-size:19px;max-width:46ch}
+.hero-footnote{color:#aeb9d1;font-size:15px}
+.trust-badge{background:transparent;border:1px solid #3a4568;border-radius:4px;color:#c9d2e4;font-size:15px}
+.trust-badge strong{color:#fff}
+.hero .button:not(.button-wa):not(.button-outline){background:var(--brass);border-color:var(--brass);color:var(--ink);box-shadow:none}
+.hero .button:not(.button-wa):not(.button-outline):hover{background:#cf9528;border-color:#cf9528}
+.hero .button-outline{color:#fff;border-color:#8793b3}.hero .button-outline:hover{background:#fff;color:var(--ink)}
+.hero-visual{background:transparent;border:0;box-shadow:none;aspect-ratio:auto;min-height:0;height:auto;overflow:visible;display:block}
+.board{background:#fff;color:var(--ink);border:2px solid #fff;border-radius:4px;box-shadow:10px 10px 0 var(--brass);padding:0}
+.board-head{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:2px solid var(--ink)}
+.board-head img{height:42px;width:auto}
+.board-head strong{display:block;font-family:"Yatra One",Mukta,serif;font-weight:400;font-size:21px;line-height:1.2}
+.board-head span{font-size:15px;color:var(--slate)}
+.board ul{list-style:none;margin:0;padding:0}
+.board li a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 20px;border-bottom:1px dashed var(--rule);text-decoration:none;color:var(--ink)}
+.board li a span{font-weight:600;font-size:17px}.board li a small{color:var(--slate);font-size:14px;white-space:nowrap}
+.board li a:hover{background:#f6ecd5}
+.board-foot{margin:0;padding:14px 20px;background:var(--chalk);font-size:15px;color:var(--slate)}
+.ridge{margin-top:-79px;height:80px;position:relative;z-index:3;pointer-events:none;line-height:0}
+.ridge svg{width:100%;height:100%;display:block}.ridge path{fill:var(--chalk)}
+.trust-strip{background:var(--chalk);box-shadow:none;border:0;margin-top:-1px}
+.trust-items span{font-size:16px;color:#243050}
+/* courses as a ruled list, not a card grid */
+.courses-section{background:#fff}
+.course-grid{display:block;border-top:3px solid var(--ink);margin-top:24px}
+.course-card{display:grid;grid-template-columns:200px 1.1fr 1.4fr auto;gap:8px 28px;align-items:baseline;background:transparent;border:0;border-bottom:1px solid var(--rule);border-radius:0;box-shadow:none;padding:24px 4px;transform:none}
+.course-card:hover{background:#f7f9fc;box-shadow:none;transform:none;border-color:var(--rule)}
+.course-icon{display:none}
+.course-card h3{font-size:25px;color:var(--ink)}
+.course-card p{font-size:17px;color:var(--slate);margin:0}
+.text-link{font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:4px;font-size:16px}
+.filter-chip{border:1.5px solid var(--ink);border-radius:4px;background:transparent;color:var(--ink);font-size:15px;font-weight:600;padding:8px 16px}
+.filter-chip.active,.filter-chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.section-heading p{font-size:18px;color:var(--slate);max-width:44ch}
+/* who studies here */
+.who-section{background:var(--chalk)}
+.who-lead{font-size:19px;color:var(--slate);max-width:52ch;margin:10px 0 36px}
+.who-grid{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:3px solid var(--ink)}
+.who-grid>div{padding:26px 28px 6px 0}.who-grid>div+div{padding-left:28px;border-left:1px solid var(--rule)}
+.who-grid h3{font-size:24px;margin-bottom:10px}.who-grid p{margin:0;color:var(--slate);font-size:17px}
+/* approach (existing) */
+.about-section{background:#fff}
+.value-item,.value-list{border-color:var(--rule)}.value-item h3{font-size:21px}.value-item p{font-size:17px;color:var(--slate)}
+/* steps: a real sequence */
+.steps-section{background:var(--ink);color:#fff}
+.steps-section h2{color:#fff}.steps-section .who-lead{color:#aeb9d1}
+.steps-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:0 16px;padding:20px 0;border-bottom:1px solid #2c3760}
+.steps li:first-child{border-top:1px solid #2c3760}
+.steps li::before{content:counter(s);grid-row:span 2;font-family:"Yatra One",serif;font-size:34px;color:#e5b65a;line-height:1}
+.steps strong{font-size:20px;font-weight:600}.steps span{color:#aeb9d1;font-size:17px}
+/* other sections */
+.video-section{background:var(--ink)}
+.results-section,.review-section,.contact-section{background:var(--chalk)}
+.faq-list summary{font-size:19px;font-weight:600}.faq-list details p{font-size:17px;color:var(--slate)}
+.cta-band{background:var(--brass);padding:56px 0}
+.cta-inner h2{color:var(--ink);font-weight:400;max-width:20ch}
+.cta-inner p{color:#2a2410}
+.cta-band .button:not(.button-wa){background:var(--ink);border-color:var(--ink);color:#fff}
+.cta-band .button-wa{background:#fff;border-color:#fff;color:var(--ink)}
+.contact-form-card{border:2px solid var(--ink);border-top:2px solid var(--ink);border-radius:4px;box-shadow:8px 8px 0 var(--brass);background:#fff}
+.enquiry-form input,.enquiry-form textarea,.enquiry-form select{border-radius:4px;font-size:17px;border:1.5px solid #aab3c6}
+.enquiry-form input:focus,.enquiry-form textarea:focus,.enquiry-form select:focus{border-color:var(--ink);box-shadow:0 0 0 3px #e9d29c}
+.detail-icon{background:var(--ink);color:#e5b65a;border-radius:4px}
+.footer{background:var(--ink)}.footer h3{color:#e5b65a;font-family:"Yatra One",serif}.footer a:hover{color:#e5b65a}
+.course-hero{background:var(--chalk)}
+@media(max-width:900px){.course-card{grid-template-columns:1fr;gap:4px;padding:20px 0}.who-grid{grid-template-columns:1fr}.who-grid>div,.who-grid>div+div{padding:22px 0;border-left:0;border-bottom:1px solid var(--rule)}.steps-wrap{grid-template-columns:1fr;gap:28px}.hero{padding:44px 0 100px}.board{box-shadow:6px 6px 0 var(--brass)}.section{padding:60px 0}}
+.hero h1{max-width:15ch}
+.course-card>.eyebrow{grid-column:1;grid-row:1}
+.course-card>h3{grid-column:2;grid-row:1}
+.course-card>p{grid-column:3;grid-row:1}
+.course-card>.text-link{grid-column:4;grid-row:1;justify-self:end;white-space:nowrap}
+.course-card>.course-photo{display:none}
+@media(max-width:900px){.course-card>.eyebrow,.course-card>h3,.course-card>p,.course-card>.text-link{grid-column:1;grid-row:auto;justify-self:start}}
+.course-card{min-height:0!important;align-content:start}
+.value-item{display:block;grid-template-columns:none;padding:20px 0}
+.value-item>*:last-child:not(p):not(h3){display:none}
+.about-section .value-list{margin-top:8px}
+h1,h2,h3{font-weight:400!important}

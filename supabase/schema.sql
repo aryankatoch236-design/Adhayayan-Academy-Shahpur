@@ -125,4 +125,4 @@ create policy "admin emails manage" on public.admin_emails for all to authentica
 grant select, insert, update, delete on public.admin_emails to authenticated;
 
 -- IMPORTANT: add the first admin (replace with your Gmail):
-insert into public.admin_emails(email,notify,added_by) values ('aryankatoch236@gmail.com',true,'setup'),('ssarthak558@gmail.com',true,'setup') on conflict (email) do update set notify=true;
+insert into public.admin_emails(email,notify,added_by) values ('aryankatoch236@gmail.com',false,'setup'),('ssarthak558@gmail.com',false,'setup') on conflict (email) do update set notify=false;
